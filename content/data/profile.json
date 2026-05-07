@@ -1,0 +1,34 @@
+{
+    "name": "Priyan Arora",
+    "elevatorPitch": [
+            "I'm a student programmer who loves learning and building cool stuff. I try to constantly go out of my comfort zone by picking up whatever the problem needs, whether that's a new framework or a language I've never touched."    ],
+    "location": "Fredericton, NB",
+    "education": {
+        "school": "University of New Brunswick",
+        "degree": "Bachelors in Computer Science",
+        "period": "Sep 2024 - May 2028"
+    },
+    "socials": {
+        "github": "https://github.com/PriyanArora",
+        "linkedin": "https://www.linkedin.com/in/priyan-arora-201108265/",
+        "email": "priyanarora22@gmail.com"
+    },
+    "skills": [
+        { "category": "Languages", "items": ["JavaScript/TypeScript", "Java", "C", "SQL"] },
+        { "category": "Frontend", "items": ["React", "Astro", "D3.js", "Tailwind", "GSAP", "HTML/CSS"] },
+        { "category": "Backend", "items": ["Node.js", "Express", "Spring Boot", "REST APIs"] },
+        { "category": "Databases", "items": ["MongoDB", "DynamoDB", "MySQL", "Redis"] },
+        { "category": "Cloud & Infrastructure", "items": ["AWS (S3, CloudFront, Lambda, API Gateway)", "Docker", "GitHub Actions", "Vercel", "Cloudflare"] }
+    ],
+    "status": {
+        "default": "💻 I am probably building something",
+        "morning": "📚 I am probably in class",
+        "night": "😴 I am probably sleeping"
+    },
+    "awards": [
+        "UNB Scholarship for Academic Excellence: 2024"
+    ],
+    "certifications": [
+        "IBM JavaScript Programming with React, Node & MongoDB Specialization - Jan 2026"
+    ]
+}     

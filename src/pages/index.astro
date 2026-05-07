@@ -1,0 +1,120 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro'; 
+import Header from '@/components/Header.astro';
+import NavPill from '@/components/NavPill.astro';
+import { getCollection } from 'astro:content';  
+import profileData from '../../content/data/profile.json';  
+
+const allProjects = await getCollection('projects');
+  const featured = allProjects                                                                                                                                                  
+      .filter(p => p.data.featured)                                                                                                                                           
+      .sort((a, b) => a.data.order - b.data.order);  
+---
+<BaseLayout>
+    <Header />
+    <NavPill />
+    <main class="max-w-screen-2xl mx-auto">
+        <section id="hero" class="min-h-screen flex items-center px-6 lg:px-16">
+            <div>
+                <h1 class="col-span-12 lg:col-span-10 font-sans text-3xl xs:text-5xl sm:text-5xl md:text-6xl lg:text-7xl 3xl:text-8xl leading-none tracking-tight">
+                    Priyan Arora (b. 2006). Computer science student currently learning full stack development and whatever interesting crosses my path.
+                </h1>
+            </div>
+        </section>
+        <section id="work" class="lg:min-h-screen px-6 lg:px-16 py-12 lg:py-20">
+              <div class="flex items-center gap-3 font-mono text-sm mb-8 lg:mb-12">                                                                                                                              
+                  <span><b>Featured Work</b></span>
+                  <span class="spin-line"></span>                                                                                                                                  
+              </div>                                                                                                                                                            
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">                                                                                                               
+                  {featured.map(project => (
+                      <a href={`/projects/${project.data.slug}`} class="group block no-underline">                                                                              
+                            <div class="aspect-video bg-white/10 rounded mb-4"></div>
+                            <p class="font-sans text-xl underline decoration-blue-500 underline-offset-4 mb-1 transition-colors group-hover:decoration-blue-200">
+                                {project.data.title}
+                            </p>
+                            <p class="font-sans text-sm opacity-60">{project.data.description}</p>
+                      </a>                                                                                                                                                      
+                  ))}                                                                                                                                                           
+              </div>                                                                                                                                                            
+          </section>  
+        <section id="cv" class="lg:min-h-screen px-6 lg:px-16 py-12 lg:py-20">
+            <div class="flex items-center gap-3 font-mono text-sm mb-8 lg:mb-12">                                                                                                             
+                <span><b>Elevator Pitch</b></span>                                                                                                                                    
+                <span class="spin-line"></span>
+            </div>                                                                                                                                                                    
+            <div class="max-w-4xl">
+                    <p class={`font-sans text-2xl xs:text-3xl md:text-4xl leading-snug`}>
+                        {profileData.elevatorPitch[0]}
+                        <br><br>
+                    <b>Open for new opportunities</b> and for making new connections. <a href="mailto:priyanarora22@gmail.com">Reach out</a> if you want to chat about anything!
+                    </p>
+            </div>      
+        </section>
+         <section id="skills" class="lg:min-h-screen px-6 lg:px-16 py-12 lg:py-20">
+            <div class="flex items-center gap-3 font-mono text-sm mb-8 lg:mb-12">
+                <span><b>Skills</b></span>
+                <span class="spin-line"></span>
+            </div>
+            <div class="flex flex-col gap-8">
+                {profileData.skills.map(group => (
+                    <div>
+                        <p class="font-mono text-sm opacity-60 mb-2">{group.category}</p>
+                        <p class="font-sans text-xl">{group.items.join(' / ')}</p>
+                    </div>
+                ))}
+            </div>
+        </section>
+        <section id="education" class="px-6 lg:px-16 py-12 lg:py-20">
+            <div class="flex items-center gap-3 font-mono text-sm mb-8 lg:mb-12">
+                <span><b>Education</b></span>                                                                                                                                         
+                <span class="spin-line"></span>
+            </div>                                                                                                                                                                    
+            <div>                                                                                                                                                                   
+                <p class="font-sans text-3xl md:text-4xl">{profileData.education.degree}</p>
+                <p class="font-mono text-sm opacity-60 mt-2">{profileData.education.school} : {profileData.education.period}</p>  
+                <br>
+                <p class="font-mono text-sm" >{profileData.awards[0]}</p>                                                    
+            </div>                                                                                                                                                                    
+        </section> 
+        <section id="certifications" class="px-6 lg:px-16 py-12 lg:py-20">
+            <div class="flex items-center gap-3 font-mono text-sm mb-8 lg:mb-12">
+                <span><b>Certifications</b></span>                                                                                                                                         
+                <span class="spin-line"></span>
+            </div>                                                                                                                                                                    
+            <div>                                                                                                                                                                   
+                <p class="font-sans text-2xl md:text-2xl">{profileData.certifications[0]}</p>                                                  
+            </div>                                                                                                                                                                    
+        </section> 
+        <section id="contact" class="px-6 lg:px-16 py-12 lg:py-20 pb-24 lg:pb-48">
+            <div class="flex items-center gap-3 font-mono text-sm mb-8 lg:mb-12">                                                                                                             
+                <span><b>Get in Touch</b></span>
+                <span class="spin-line"></span>                                                                                                                                       
+            </div>                                                                                                                                                                    
+            <p class="font-sans text-2xl xs:text-3xl md:text-4xl">
+                Find me on <a href={profileData.socials.linkedin}>LinkedIn</a> or <a href={profileData.socials.github}>GitHub</a>. Or just <a href="mailto:priyanarora22@gmail.com">send an email</a>.                                                                                                                      
+            </p>                                                                                                                                                                      
+        </section>        
+    </main>
+    <script>
+        import gsap from 'gsap';                                                                                                                                                      
+        import { SplitText } from 'gsap/SplitText'; 
+        gsap.registerPlugin(SplitText);
+
+        window.addEventListener('DOMContentLoaded', () => {
+            const split = new SplitText('h1', { type: 'words' });
+
+            gsap.from(split.words, {
+                y: 40,
+                opacity: 0,
+                duration: 1.4,
+                stagger: 0.07,
+                ease: 'power3.out'
+            });
+
+            // header after words end (1.4 seconds delay is duration 1.4 above so header comes aft words )
+            gsap.from('#header', { y: '-100%', duration: 1, delay: 1.4, ease: 'power4.out' });
+        });
+    </script>
+   
+</BaseLayout>

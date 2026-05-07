@@ -1,0 +1,121 @@
+---
+import type { Profile } from '../types'; 
+import profileData from '../../content/data/profile.json';
+
+const profile = profileData as Profile;
+---
+<header id="header">
+    <div class="header-left">
+        <span class="name">{profile.name}</span>
+        <span class="spin-line"></span>  
+    </div>                                                                                                                                                                      
+    <div class="header-right">
+        <span class="location">{profile.location}</span>
+        <span id="clock"></span>
+        <span id="status-text">                                                                                                                                                       
+            <span class="status-emoji">{profile.status.default.split(' ')[0]}</span>                                                                                                    
+            <span class="status-label">{profile.status.default.split(' ').slice(1).join(' ')}</span>                                                                                    
+        </span>                                                                                                          
+    </div>
+</header>
+<script>
+    import profileData from '../../content/data/profile.json';
+
+    const status = profileData.status;
+
+    function updateStatus(){
+        const hour = parseInt(new Date().toLocaleTimeString('en-US', {
+                timeZone: 'America/Moncton',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+                hour12: false
+            }).split(':')[0]);   //gets just the hour in moncton/freddy time
+
+        const statusEl = document.getElementById('status-text');
+        if(!statusEl){return}
+        let text = status.default;
+        if(hour >= 9 && hour < 13){
+            text = status.morning;
+        }
+        else if(hour>=23 || hour < 9){
+            text = status.night;
+        }
+
+        const parts = text.split(' ');
+        statusEl.innerHTML = `
+            <span class="status-emoji">${parts[0]}</span> 
+            <span class="status-label">${parts.slice(1).join(' ')}</span>
+        `;
+    }
+    updateStatus();
+
+
+    // Live clock, freddy time i.e moncton
+    function updateClock() {
+        const clock = document.getElementById('clock');
+        if(clock){
+            clock.textContent = new Date().toLocaleTimeString('en-US', {
+                timeZone: 'America/Moncton',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+                hour12: true
+            });
+        }
+    }
+    updateClock();
+    setInterval(updateClock, 1000);
+</script>
+
+<style is:global>
+    header{
+        position: fixed;
+        top: 0.5rem;
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 1.5rem;
+        z-index: 50;
+        font-family: 'Fraktion Mono', monospace;
+        font-size: 0.7rem;
+    }
+
+    .header-left {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+    }
+
+    .header-right {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    @keyframes wiggle {                                                                                                                                                           
+    0%, 100% { transform: rotate(0deg); }                                                                                                                                       
+    25% { transform: rotate(-15deg); }                                                                                                                                          
+    75% { transform: rotate(15deg); }                       
+  }
+
+  .status-emoji {
+    display: inline-block;
+    animation: wiggle 2s ease-in-out infinite;
+    font-size: 0.9rem;
+  }
+
+  @media (max-width: 767px) {
+    .status-label { display: none; }
+    .header-right { gap: 0.5rem; }
+  }
+
+  @media (orientation: landscape) and (max-height: 600px) {
+    header {
+      top: 0.25rem;
+      padding: 0.5rem 1.25rem;
+    }
+  }
+</style>
