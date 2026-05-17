@@ -6,4 +6,9 @@ import mdx from '@astrojs/mdx';
 export default defineConfig({
   integrations: [react(), tailwind(), mdx()],
   output: "static",
+  vite: {
+    server: {
+      allowedHosts: ["padding-prescribe-popsicle.ngrok-free.dev"],
+    },
+  },
 });

@@ -8,6 +8,9 @@ export interface Profile {
         degree: string;
         period: string;  
     };
+    awards: string[];
+    grades: string[];
+    certifications: string[];
     socials: {
         github: string;
         linkedin: string;

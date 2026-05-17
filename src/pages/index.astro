@@ -16,7 +16,7 @@ const allProjects = await getCollection('projects');
     <main class="max-w-screen-2xl mx-auto">
         <section id="hero" class="min-h-screen flex items-center px-6 lg:px-16">
             <div>
-                <h1 class="col-span-12 lg:col-span-10 font-sans text-3xl xs:text-5xl sm:text-5xl md:text-6xl lg:text-7xl 3xl:text-8xl leading-none tracking-tight">
+                <h1 class="hero-title col-span-12 lg:col-span-10 font-sans text-3xl xs:text-5xl sm:text-5xl md:text-6xl lg:text-7xl 3xl:text-8xl leading-none tracking-tight">
                     Priyan Arora (b. 2006). Computer science student currently learning full stack development and whatever interesting crosses my path.
                 </h1>
             </div>
@@ -74,8 +74,26 @@ const allProjects = await getCollection('projects');
                 <p class="font-sans text-3xl md:text-4xl">{profileData.education.degree}</p>
                 <p class="font-mono text-sm opacity-60 mt-2">{profileData.education.school} : {profileData.education.period}</p>  
                 <br>
-                <p class="font-mono text-sm" >{profileData.awards[0]}</p>                                                    
+                <div class="mt-6 flex flex-col gap-2">
+                    {profileData.grades.map((grade) => (
+                    <p class="font-mono text-sm">
+                        {grade}
+                    </p>
+                    ))}
+                </div>                                                    
             </div>                                                                                                                                                                    
+        </section>
+        <section id="awards" class="px-6 lg:px-16 py-12 lg:py-20">
+            <div class="flex items-center gap-3 font-mono text-sm mb-8 lg:mb-12">
+            <span><b>Awards</b></span>
+            <span class="spin-line"></span>
+            </div>
+
+            <div class="flex flex-col gap-3">
+            {profileData.awards.map((award) => (
+                <p class="font-sans text-2xl md:text-3xl">{award}</p>
+            ))}
+            </div>
         </section> 
         <section id="certifications" class="px-6 lg:px-16 py-12 lg:py-20">
             <div class="flex items-center gap-3 font-mono text-sm mb-8 lg:mb-12">
@@ -102,19 +120,41 @@ const allProjects = await getCollection('projects');
         gsap.registerPlugin(SplitText);
 
         window.addEventListener('DOMContentLoaded', () => {
+            const heroTitle = document.querySelector('.hero-title');
+            if (!heroTitle) return;
+
             const split = new SplitText('h1', { type: 'words' });
 
-            gsap.from(split.words, {
+            gsap.set(split.words, {
                 y: 40,
-                opacity: 0,
+                opacity: 0
+            });
+
+            gsap.set(heroTitle, {
+                visibility: 'visible'
+            });
+
+            gsap.to(split.words, {
+                y: 0,
+                opacity: 1,
                 duration: 1.4,
                 stagger: 0.07,
                 ease: 'power3.out'
             });
 
-            // header after words end (1.4 seconds delay is duration 1.4 above so header comes aft words )
-            gsap.from('#header', { y: '-100%', duration: 1, delay: 1.4, ease: 'power4.out' });
+            gsap.to('#header', {
+                y: '0%',
+                duration: 1,
+                delay: 1.4,
+                ease: 'power4.out'
+            });
         });
+
     </script>
+    <style>
+        .hero-title {
+        visibility: hidden;
+        }
+    </style>
    
 </BaseLayout>
