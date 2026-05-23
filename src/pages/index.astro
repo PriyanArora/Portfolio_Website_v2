@@ -14,10 +14,10 @@ const allProjects = await getCollection('projects');
     <Header />
     <NavPill />
     <main class="max-w-screen-2xl mx-auto">
-        <section id="hero" class="min-h-screen flex items-center px-6 lg:px-16">
+        <section id="hero" class="min-h-screen flex items-start px-6 lg:px-11 pt-[21vh]">
             <div>
-                <h1 class="hero-title col-span-12 lg:col-span-10 font-sans text-3xl xs:text-5xl sm:text-5xl md:text-6xl lg:text-7xl 3xl:text-8xl leading-none tracking-tight">
-                    Priyan Arora (b. 2006). Computer science student currently learning full stack development and whatever interesting crosses my path.
+                <h1 class="hero-title col-span-12 lg:col-span-10 font-sans text-3xl xs:text-5xl sm:text-5xl md:text-6xl lg:text-[6rem] 3xl:text-[6.8rem] leading-none tracking-tight">
+                    Priyan Arora (b. 2006). Computer science student who spends his time pushing pixels and writing code for screens.
                 </h1>
             </div>
         </section>
@@ -101,7 +101,13 @@ const allProjects = await getCollection('projects');
                 <span class="spin-line"></span>
             </div>                                                                                                                                                                    
             <div>                                                                                                                                                                   
-                <p class="font-sans text-2xl md:text-2xl">{profileData.certifications[0]}</p>                                                  
+                {profileData.certifications.map((certification) => (
+                    <p class="font-sans text-2xl">
+                        <a href={certification.url} target="_blank" rel="noopener noreferrer" class="no-underline">
+                            {certification.name}
+                        </a>
+                    </p>
+                ))}         
             </div>                                                                                                                                                                    
         </section> 
         <section id="contact" class="px-6 lg:px-16 py-12 lg:py-20 pb-24 lg:pb-48">

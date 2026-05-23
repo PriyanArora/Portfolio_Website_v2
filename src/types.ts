@@ -1,6 +1,5 @@
 export interface Profile {    
     name: string;     
-    bio: string;  
     elevatorPitch: string[];
     location: string;   
     education: {

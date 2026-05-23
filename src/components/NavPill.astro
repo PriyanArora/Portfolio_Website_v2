@@ -3,15 +3,100 @@
 
 <div id="nav-wrapper">
   <nav id="nav-pill">
-    <a href="#work">Work</a>
-    <span>/</span>
-    <a href="#cv">CV</a>
-    <span>/</span>
-    <a href="#contact">Contact</a>
+    <a id="intro-link" class="pill-layer" href="#work">
+      <span>Get on with it</span>
+      <span class="down-arrow">↓</span>
+    </a>
+
+    <div id="section-links" class="pill-layer">
+      <a href="#work">Work</a>
+      <span>/</span>
+      <a href="#cv">CV</a>
+      <span>/</span>
+      <a href="#contact">Contact</a>
+    </div>
   </nav>
 </div>
 
 <style>
+  .pill-layer {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.7rem;
+    line-height: 1;
+    padding-top: 0.08rem;
+    transition: transform 0.35s ease, opacity 0.35s ease;
+  }
+
+  #intro-link {
+    gap: 0.35rem;
+    transform: translateY(0);
+    opacity: 1;
+    z-index: 2;
+    pointer-events: auto;
+  }
+
+  #nav-pill.is-scrolled #intro-link {
+    transform: translateY(-100%);
+    opacity: 0;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  #section-links {
+    gap: 0.7rem;
+    transform: translateY(100%);
+    opacity: 0;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  #nav-pill.is-scrolled #section-links {
+    transform: translateY(0);
+    opacity: 1;
+    z-index: 2;
+    pointer-events: auto;
+  }
+
+  #nav-pill.is-scrolled #section-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 0 0.15rem;
+    pointer-events: auto;
+  }
+
+  #section-links span {
+    pointer-events: none;
+  }
+
+  .down-arrow {
+    display: inline-block;
+    line-height: 1;
+    margin-left: -0.08rem;
+    animation: arrow-bounce 1.2s ease-in-out infinite;
+  }
+
+  @keyframes arrow-bounce {
+    0%, 100% {
+      transform: translateY(-0.12rem);
+    }
+
+    50% {
+      transform: translateY(0.12rem);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .down-arrow {
+      animation: none;
+    }
+  }
+
   #nav-wrapper {
     position: fixed;
     bottom: 0.9rem;
@@ -29,9 +114,15 @@
     padding: 1rem 3.6rem;
     border-radius: 9999px;
     font-family: 'Fraktion Sans', sans-serif;
-    font-size: 0.84rem;
+    font-size: 0.88rem;
     transform-style: preserve-3d;
     transition: transform 0.1s ease;
+    position: relative;
+    width: min(320px, calc(100vw - 2rem));
+    height: 56px;
+    overflow: hidden;
+    justify-content: center;
+    padding: 0;
   }
 
   a {
@@ -44,7 +135,6 @@
 
   @media (max-width: 400px) {
     nav {
-      padding: 0.85rem 2rem;
       font-size: 0.78rem;
       gap: 0.5rem;
     }
@@ -55,8 +145,8 @@
       bottom: 0.5rem;
     }
     nav {
-      padding: 0.7rem 2.4rem;
       font-size: 0.78rem;
+      height: 50px;
     }
   }
 </style>
@@ -78,14 +168,35 @@
     pill.style.transform = 'rotateZ(0deg)';
   });
 
-  window.addEventListener('scroll', () => {
-    if (!pill) return;
+  function updatePillState() {
+    if (!pill){return;}
+    
+    if(window.scrollY > 8){
+      pill.classList.add('is-scrolled');
+    }
+    else{
+      pill.classList.remove('is-scrolled');
+    }
 
     const scrolled = window.scrollY;
     const total = document.body.scrollHeight - window.innerHeight;
     const progress = total > 0 ? (scrolled / total) * 100 : 0;
 
     pill.style.background = `linear-gradient(to right, rgb(38, 45, 61) ${progress}%, rgb(15, 20, 39) ${progress}%)`;
+  }
+
+  updatePillState();
+  window.addEventListener('scroll', updatePillState);
+
+  pill?.addEventListener('click', (e) => {
+    if (!pill.classList.contains('is-scrolled')) return;
+    if (e.target instanceof Element && e.target.closest('a')) return;
+
+    const rect = pill.getBoundingClientRect();
+    const tapX = e.clientX - rect.left;
+    const target = tapX < rect.width / 3 ? '#work' : tapX < (rect.width * 2) / 3 ? '#cv' : '#contact';
+
+    window.location.hash = target;
   });
 
 </script>

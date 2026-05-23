@@ -14,27 +14,40 @@
         "email": "priyanarora22@gmail.com"
     },
     "skills": [
-        { "category": "Languages", "items": ["JavaScript/TypeScript", "Java", "C", "SQL"] },
-        { "category": "Frontend", "items": ["React", "Astro", "D3.js", "Tailwind", "GSAP", "HTML/CSS"] },
-        { "category": "Backend", "items": ["Node.js", "Express", "Spring Boot", "REST APIs"] },
-        { "category": "Databases", "items": ["MongoDB", "DynamoDB", "MySQL", "Redis"] },
-        { "category": "Cloud & Infrastructure", "items": ["AWS (S3, CloudFront, Lambda, API Gateway)", "Docker", "GitHub Actions", "Vercel", "Cloudflare"] }
+        { "category": "Languages", "items": ["JavaScript, TypeScript", "Java", "C", "SQL"] },
+        { "category": "Frontend", "items": ["React", "Next.js","Astro", "D3.js", "Tailwind", "GSAP", "HTML", "CSS"] },
+        { "category": "Backend", "items": ["Node.js", "Express", "Spring Boot", "REST APIs", "gRPC", "JWT authentication", "Zod"] },
+        { "category": "Databases", "items": ["MongoDB", "DynamoDB", "MySQL", "Supabase", "PostgreSQL"] },
+        { "category": "Cloud & Tools", "items": ["AWS (Lambda, API Gateway, SQS, Parameter Store, S3, CloudFront)", "Docker", "GitHub Actions", "Vercel", "Render","Cloudflare", "Git", "Maven", "npm workspaces", "Vitest", "Jest", "Supertest", "Flyway"] }
     ],
     "status": {
         "default": "💻 I am probably building something",
         "morning": "📚 I am probably in class",
-        "night": "😴 I am probably sleeping"
+        "night": "😴 I am probably sleeping",
+        "weekend": "😎 I am probably weekending"
     },
     "awards": [
         "Dean's List: 2025 - 2026",
         "UNB Scholarship for Academic Excellence: 2024 - 2025"
     ],
     "grades": [ 
-        "2024/25 Assessment Year GPA: 3.6", 
-        "2025/26 Assessment Year GPA: 4.0",
-        "CGPA: 3.8"
+        "2024/25 Assessment Year GPA: 3.6/4.3", 
+        "2025/26 Assessment Year GPA: 4.0/4.3",
+        "2026/Summer: 4.0/4.3",
+        "CGPA: 3.9/4.3"
     ],
     "certifications": [
-        "IBM JavaScript Programming with React, Node & MongoDB Specialization - Jan 2026"
+        {
+            "name": "IBM JavaScript Programming with React, Node & MongoDB Specialization - January 2026",
+            "url": "https://www.coursera.org/account/accomplishments/specialization/6023TGLRSSTL"
+        },
+        {
+            "name": "IBM Java Developer Professional Certificate - January 2026",
+            "url": "https://www.coursera.org/account/accomplishments/specialization/1P0GW2KKNUVY"
+        },
+        {
+            "name": "IBM Introduction to DevOps - October 2025",
+            "url": "https://www.coursera.org/account/accomplishments/professional"
+        }
     ]
 }     
