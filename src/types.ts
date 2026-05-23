@@ -9,7 +9,7 @@ export interface Profile {
     };
     awards: string[];
     grades: string[];
-    certifications: string[];
+    certifications: { name: string; url: string }[];
     socials: {
         github: string;
         linkedin: string;

@@ -29,7 +29,20 @@ const allProjects = await getCollection('projects');
               <div class="grid grid-cols-1 md:grid-cols-2 gap-6">                                                                                                               
                   {featured.map(project => (
                       <a href={`/projects/${project.data.slug}`} class="group block no-underline">                                                                              
-                            <div class="aspect-video bg-white/10 rounded mb-4"></div>
+                            {project.data.video ? (
+                                <video
+                                    class="aspect-video w-full object-cover bg-white/10 rounded mb-4"
+                                    autoplay
+                                    muted
+                                    loop
+                                    playsinline
+                                    preload="metadata"
+                                >
+                                    <source src={project.data.video} type="video/mp4" />
+                                </video>
+                            ) : (
+                                <div class="aspect-video bg-white/10 rounded mb-4"></div>
+                            )}
                             <p class="font-sans text-xl underline decoration-blue-500 underline-offset-4 mb-1 transition-colors group-hover:decoration-blue-200">
                                 {project.data.title}
                             </p>
@@ -38,7 +51,7 @@ const allProjects = await getCollection('projects');
                   ))}                                                                                                                                                           
               </div>                                                                                                                                                            
           </section>  
-        <section id="cv" class="lg:min-h-screen px-6 lg:px-16 py-12 lg:py-20">
+        <section id="cv" class="px-6 lg:px-16 py-12 lg:pt-20 lg:pb-12">
             <div class="flex items-center gap-3 font-mono text-sm mb-8 lg:mb-12">                                                                                                             
                 <span><b>Elevator Pitch</b></span>                                                                                                                                    
                 <span class="spin-line"></span>
@@ -51,7 +64,7 @@ const allProjects = await getCollection('projects');
                     </p>
             </div>      
         </section>
-         <section id="skills" class="lg:min-h-screen px-6 lg:px-16 py-12 lg:py-20">
+         <section id="skills" class="px-6 lg:px-16 py-12 lg:pt-20 lg:pb-12">
             <div class="flex items-center gap-3 font-mono text-sm mb-8 lg:mb-12">
                 <span><b>Skills</b></span>
                 <span class="spin-line"></span>
@@ -65,7 +78,7 @@ const allProjects = await getCollection('projects');
                 ))}
             </div>
         </section>
-        <section id="education" class="px-6 lg:px-16 py-12 lg:py-20">
+        <section id="education" class="px-6 lg:px-16 py-12 lg:pt-20 lg:pb-12">
             <div class="flex items-center gap-3 font-mono text-sm mb-8 lg:mb-12">
                 <span><b>Education</b></span>                                                                                                                                         
                 <span class="spin-line"></span>
@@ -83,7 +96,7 @@ const allProjects = await getCollection('projects');
                 </div>                                                    
             </div>                                                                                                                                                                    
         </section>
-        <section id="awards" class="px-6 lg:px-16 py-12 lg:py-20">
+        <section id="awards" class="px-6 lg:px-16 py-12 lg:pt-20 lg:pb-12">
             <div class="flex items-center gap-3 font-mono text-sm mb-8 lg:mb-12">
             <span><b>Awards</b></span>
             <span class="spin-line"></span>
@@ -95,7 +108,7 @@ const allProjects = await getCollection('projects');
             ))}
             </div>
         </section> 
-        <section id="certifications" class="px-6 lg:px-16 py-12 lg:py-20">
+        <section id="certifications" class="px-6 lg:px-16 py-12 lg:pt-20 lg:pb-12">
             <div class="flex items-center gap-3 font-mono text-sm mb-8 lg:mb-12">
                 <span><b>Certifications</b></span>                                                                                                                                         
                 <span class="spin-line"></span>

@@ -54,6 +54,9 @@
   --blue-bg: rgb(30, 64, 175);
 }
 
+/**
+do not remove - somehow only works with this
+*/
 html {
     scroll-behavior: smooth;
 }
