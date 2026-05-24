@@ -57,7 +57,7 @@ const allProjects = await getCollection('projects');
                                                 rel="noopener noreferrer"
                                                 aria-label={`${project.data.title} GitHub repository`}
                                             >
-                                                <img src="/github_logo.png" alt="" loading="lazy" decoding="async" />
+                                                <img src="/github_logo.png" alt="" decoding="async" />
                                             </a>
                                         )}
                                         {project.data.liveUrl && (
@@ -68,7 +68,7 @@ const allProjects = await getCollection('projects');
                                                 rel="noopener noreferrer"
                                                 aria-label={`${project.data.title} external link`}
                                             >
-                                                <img src="/link-icon.svg" alt="" loading="lazy" decoding="async" />
+                                                <img src="/link-icon.svg" alt="" decoding="async" />
                                             </a>
                                         )}
                                     </div>
@@ -127,7 +127,7 @@ const allProjects = await getCollection('projects');
                 <span class="spin-line"></span>                                                                                                                                       
             </div>                                                                                                                                                                    
             <p class="font-sans text-2xl xs:text-3xl md:text-4xl">
-                Find me on <a href={profileData.socials.linkedin}>LinkedIn</a> or <a href={profileData.socials.github}>GitHub</a>. Or just <a href="mailto:priyanarora22@gmail.com">send an email</a>.                                                                                                                      
+                Find me on <a href={profileData.socials.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a> or <a href={profileData.socials.github} target="_blank" rel="noopener noreferrer">GitHub</a>. Or just <a href="mailto:priyanarora22@gmail.com">send an email</a>.                                                                                                                      
             </p>                                                                                                                                                                      
         </section>        
     </main>
