@@ -1,0 +1,12 @@
+---
+title: "Auctus"
+slug: "project-2"
+description: "Canadian funding discovery platform that helps businesses, students, and professors find relevant funding."
+status: "completed"
+tags: ["Next.js", "TypeScript", "React", "Tailwind CSS", "Supabase", "Vitest"]
+thumbnail: "/thumbnails/placeholder.png"
+repoUrl: "https://github.com/AaryanKapoor08/auctus"
+liveUrl: "https://auctus-five.vercel.app/"
+featured: true
+order: 2
+---

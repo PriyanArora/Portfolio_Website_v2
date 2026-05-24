@@ -3,11 +3,6 @@
     "elevatorPitch": [
             "I'm a student who loves learning and building cool stuff. I try to constantly go out of my comfort zone by picking up whatever the problem needs, whether that's a new framework or a language I've never touched."    ],
     "location": "Fredericton, NB",
-    "education": {
-        "school": "University of New Brunswick",
-        "degree": "Bachelors in Computer Science",
-        "period": "Sep 2024 - May 2028"
-    },
     "socials": {
         "github": "https://github.com/PriyanArora",
         "linkedin": "https://www.linkedin.com/in/priyan-arora-201108265/",
@@ -26,16 +21,6 @@
         "night": "😴 I am probably sleeping",
         "weekend": "😎 I am probably weekending"
     },
-    "awards": [
-        "Dean's List: 2025 - 2026",
-        "UNB Scholarship for Academic Excellence: 2024 - 2025"
-    ],
-    "grades": [ 
-        "2024/25 Assessment Year GPA: 3.6/4.3", 
-        "2025/26 Assessment Year GPA: 4.0/4.3",
-        "2026/Summer: 4.0/4.3",
-        "CGPA: 3.9/4.3"
-    ],
     "certifications": [
         {
             "name": "IBM JavaScript Programming with React, Node & MongoDB Specialization - January 2026",
