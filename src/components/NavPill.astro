@@ -17,7 +17,8 @@
     </div>
   </nav>
 
-  <a id="terminal-switch" href="/terminal/">Switch to Terminal?</a>
+  <a id="resume-download" class="nav-side-link" href="/resume/resume.pdf" target="_blank" rel="noopener noreferrer">Download Resume</a>
+  <a id="terminal-switch" class="nav-side-link" href="/terminal/">Switch to Terminal?</a>
 </div>
 
 <style>
@@ -100,14 +101,20 @@
   }
 
   #nav-wrapper {
+    --nav-bottom: 0.9rem;
+    --nav-height: 56px;
+    --page-left: 1.5rem;
+    --page-right: 1.5rem;
     position: fixed;
-    bottom: 0.9rem;
-    left: 50%;
-    transform: translateX(-50%);
+    bottom: var(--nav-bottom);
+    left: 0;
+    right: 0;
+    height: var(--nav-height);
     perspective: 800px;
     z-index: 50;
     font-family: 'Fraktion Sans', sans-serif;
     font-size: 0.88rem;
+    pointer-events: none;
   }
 
   nav {
@@ -123,16 +130,17 @@
     transition: transform 0.1s ease;
     position: relative;
     width: min(320px, calc(100vw - 2rem));
-    height: 56px;
+    height: var(--nav-height);
     overflow: hidden;
     justify-content: center;
     padding: 0;
+    margin: 0 auto;
+    pointer-events: auto;
   }
 
-  #terminal-switch {
+  .nav-side-link {
     position: absolute;
     top: 50%;
-    left: calc(100% + 1rem);
     transform: translateY(-50%);
     padding: 0;
     border: 0;
@@ -147,9 +155,18 @@
     text-underline-offset: 3px;
     white-space: nowrap;
     cursor: pointer;
+    pointer-events: auto;
   }
 
-  #terminal-switch:hover {
+  #resume-download {
+    left: var(--page-left);
+  }
+
+  #terminal-switch {
+    right: var(--page-right);
+  }
+
+  .nav-side-link:hover {
     opacity: 0.8;
   }
 
@@ -171,20 +188,30 @@
     }
   }
 
-  @media (max-width: 560px) {
-    #terminal-switch {
+  @media (min-width: 768px) {
+    #nav-wrapper {
+      --page-right: 3.4375rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    #nav-wrapper {
+      --page-left: max(2.75rem, calc((100vw - 1536px) / 2 + 2.75rem));
+    }
+  }
+
+  @media (max-width: 760px) {
+    .nav-side-link {
       top: -1.2rem;
-      left: 50%;
-      transform: translate(-50%, -100%);
+      transform: translateY(-100%);
+      font-size: 0.78rem;
     }
   }
 
   @media (orientation: landscape) and (max-height: 600px) {
     #nav-wrapper {
-      bottom: 0.5rem;
-    }
-    nav {
-      height: 50px;
+      --nav-bottom: 0.5rem;
+      --nav-height: 50px;
     }
 
     #nav-wrapper {
