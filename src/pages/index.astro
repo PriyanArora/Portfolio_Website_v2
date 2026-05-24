@@ -6,6 +6,7 @@ import { getCollection } from 'astro:content';
 import profileData from '../../content/data/profile.json';  
 
 const allProjects = await getCollection('projects');
+const placeholderThumbnail = '/thumbnails/placeholder.png';
   const featured = allProjects                                                                                                                                                  
       .filter(p => p.data.featured)                                                                                                                                           
       .sort((a, b) => a.data.order - b.data.order);  
@@ -30,16 +31,21 @@ const allProjects = await getCollection('projects');
                   {featured.map(project => (
                       <article class="project-card group block">                                                                              
                             {project.data.video ? (
-                                <video
-                                    class="aspect-video w-full object-cover bg-white/10 rounded mb-4"
-                                    autoplay
-                                    muted
-                                    loop
-                                    playsinline
-                                    preload="metadata"
-                                >
-                                    <source src={project.data.video} type="video/mp4" />
-                                </video>
+                                <div class="project-video">
+                                    <video
+                                        autoplay
+                                        muted
+                                        loop
+                                        playsinline
+                                        preload="metadata"
+                                    >
+                                        <source src={project.data.video} type="video/mp4" />
+                                    </video>
+                                </div>
+                            ) : project.data.thumbnail !== placeholderThumbnail ? (
+                                <div class={`project-media project-media-${project.data.slug}`}>
+                                    <img src={project.data.thumbnail} alt="" decoding="async" />
+                                </div>
                             ) : (
                                 <div class="aspect-video bg-white/10 rounded mb-4"></div>
                             )}
@@ -171,6 +177,63 @@ const allProjects = await getCollection('projects');
     <style>
         .hero-title {
         visibility: hidden;
+        }
+
+        .project-media,
+        .project-video {
+            aspect-ratio: 2 / 1;
+            width: 100%;
+            overflow: hidden;
+            border-radius: 0.25rem;
+            margin-bottom: 1rem;
+            background: rgb(255 255 255 / 0.1);
+        }
+
+        .project-media {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .project-video video {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center center;
+        }
+
+        .project-media img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .project-media-project-1 {
+            background: #222226;
+        }
+
+        .project-media-project-5 {
+            background: #ffffff;
+            border: 1px solid #ffffff;
+        }
+
+        .project-media-project-5 img {
+            object-fit: cover;
+            object-position: 54% 44%;
+            transform: scale(1.55);
+            transform-origin: 54% 44%;
+        }
+
+        .project-media-project-6 {
+            background: #222226;
+        }
+
+        .project-media-project-1 img,
+        .project-media-project-6 img {
+            width: 50%;
+            height: 50%;
         }
 
         .project-title-row {

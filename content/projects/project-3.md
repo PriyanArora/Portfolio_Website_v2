@@ -9,5 +9,5 @@ video: "/videos/d3.mp4"
 repoUrl: "https://github.com/PriyanArora/D3Careers"
 liveUrl: "https://d3-careers.vercel.app/"
 featured: true
-order: 3
+order: 2
 ---

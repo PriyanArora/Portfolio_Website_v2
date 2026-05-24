@@ -94,7 +94,7 @@ Try \`vim work/01_PRPilot\` to read a project. Or \`sl\` if you're bored.
     type: "dir",
     children: [
       "01_PRPilot",
-      "02_Auctus",
+      "02_auctus",
       "03_D3Careers",
       "04_BSI_Solutionz",
       "05_EVLOS-OPS",
@@ -147,11 +147,11 @@ storage, and clear GitHub Check Run output.
 `
   },
 
-  "~/work/02_Auctus": {
+  "~/work/02_auctus": {
     type: "file",
     tag: "[ Next.js · Supabase · Funding discovery ]",
     content:
-`Auctus
+`auctus
 ======
 
 A Canadian funding discovery platform that helps people find
