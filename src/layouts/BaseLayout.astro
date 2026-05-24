@@ -3,7 +3,7 @@ interface Props {
   title?: string;
 }
 
-const {title = "Priyan Arora"} = Astro.props;
+const {title = "Priyan Arora | Software Engineer"} = Astro.props;
 const description = "Priyan Arora is a computer science student and software developer in Fredericton, New Brunswick, building projects with React, Astro, Next.js, TypeScript, Java, Node.js, Spring Boot, D3.js, GIS, AWS, and Supabase.";
 const keywords = [
   "Priyan Arora",
@@ -65,6 +65,7 @@ const keywords = [
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
+        <link rel="icon" href="/favicon.ico" type="image/x-icon" />
         <title>{title}</title>                                                                                                                                                    
     </head>                                                                                                                                                                     
     <body>                                                                                                                                                                      
