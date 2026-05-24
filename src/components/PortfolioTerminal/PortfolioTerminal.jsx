@@ -10,7 +10,7 @@ import TweaksUI, { useTweaks } from "./Tweaks.jsx";
 import { useKeyboardAudio } from "./keySounds.js";
 import {
   HEADER_BANNER, SL_FRAME,
-  FS_TREE, fsGet, fsResolve
+  fsGet, fsResolve
 } from "./data.js";
 import "./portfolio-terminal.css";
 

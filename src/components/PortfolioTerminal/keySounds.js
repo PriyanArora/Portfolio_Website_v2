@@ -114,7 +114,7 @@ export function useKeyboardAudio(enabled = true) {
   const ensureReady = useCallback(async () => {
     if (!enabled || typeof window === "undefined") return false;
     if (!ctxRef.current) {
-      const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+      const AudioContextClass = window.AudioContext || window["webkitAudioContext"];
       if (!AudioContextClass) return false;
       ctxRef.current = new AudioContextClass();
     }
@@ -139,7 +139,7 @@ export function useKeyboardAudio(enabled = true) {
         .catch(() => null);
     }
 
-    return Boolean(await loadingRef.current);
+    return loadingRef.current.then((buffer) => Boolean(buffer));
   }, [enabled]);
 
   const play = useCallback(async (sound) => {
