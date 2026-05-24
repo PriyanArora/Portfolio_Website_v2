@@ -34,3 +34,8 @@ DEPLOYMENT.md
 
 # Extracted archive noise
 __MACOSX/
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
