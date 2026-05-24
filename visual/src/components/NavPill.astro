@@ -16,6 +16,8 @@
       <a href="#contact">Contact</a>
     </div>
   </nav>
+
+  <button id="terminal-switch" type="button">Switch to Terminal?</button>
 </div>
 
 <style>
@@ -104,6 +106,8 @@
     transform: translateX(-50%);
     perspective: 800px;
     z-index: 50;
+    font-family: 'Fraktion Sans', sans-serif;
+    font-size: 0.88rem;
   }
 
   nav {
@@ -113,8 +117,8 @@
     background-color: rgb(17, 24, 39);
     padding: 1rem 3.6rem;
     border-radius: 9999px;
-    font-family: 'Fraktion Sans', sans-serif;
-    font-size: 0.88rem;
+    font-family: inherit;
+    font-size: inherit;
     transform-style: preserve-3d;
     transition: transform 0.1s ease;
     position: relative;
@@ -123,6 +127,30 @@
     overflow: hidden;
     justify-content: center;
     padding: 0;
+  }
+
+  #terminal-switch {
+    position: absolute;
+    top: 50%;
+    left: calc(100% + 1rem);
+    transform: translateY(-50%);
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: 700;
+    line-height: 1;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+    white-space: nowrap;
+    cursor: pointer;
+  }
+
+  #terminal-switch:hover {
+    opacity: 0.8;
   }
 
   a {
@@ -134,9 +162,20 @@
   }
 
   @media (max-width: 400px) {
-    nav {
+    #nav-wrapper {
       font-size: 0.78rem;
+    }
+
+    nav {
       gap: 0.5rem;
+    }
+  }
+
+  @media (max-width: 560px) {
+    #terminal-switch {
+      top: -1.2rem;
+      left: 50%;
+      transform: translate(-50%, -100%);
     }
   }
 
@@ -145,8 +184,11 @@
       bottom: 0.5rem;
     }
     nav {
-      font-size: 0.78rem;
       height: 50px;
+    }
+
+    #nav-wrapper {
+      font-size: 0.78rem;
     }
   }
 </style>
