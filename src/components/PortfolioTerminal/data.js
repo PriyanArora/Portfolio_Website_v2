@@ -82,7 +82,7 @@ export const FS_TREE = {
 You're standing in my home directory. One folder, three files.
 
   work/         ← my projects (run \`cd work && ls\`)
-  cv.md         ← who I am and skills
+  cv.md         ← who I am, skills, education
   contact.md    ← where to find me
 
 Try \`vim work/01_PRPilot\` to read a project. Or \`sl\` if you're bored.
@@ -435,6 +435,22 @@ Cloud and Tools
     CloudFront · Docker · GitHub Actions · Vercel · Render ·
     Cloudflare · Git · Maven · npm workspaces · Vitest · Jest ·
     Supertest · Flyway
+
+Education
+---------
+Bachelor of Computer Science
+University of New Brunswick
+September 2024 — May 2028
+
+    2024/25 Assessment Year GPA   3.6 / 4.3
+    2025/26 Assessment Year GPA   4.0 / 4.3
+    2026 Summer GPA               4.0 / 4.3
+    CGPA                          3.9 / 4.3
+
+Awards
+------
+    Dean's List                                  2025 — 2026
+    UNB Scholarship for Academic Excellence      2024 — 2025
 
 Certifications
 --------------
