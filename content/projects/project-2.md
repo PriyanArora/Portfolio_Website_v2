@@ -1,7 +1,7 @@
 ---
 title: "auctus"
 slug: "project-2"
-description: "Canadian funding discovery platform that helps businesses, students, and professors find relevant funding."
+description: "Canadian funding discovery platform that helps businesses, students, and professors find relevant funding. Taken to the Ideation Boost Camp 2026."
 status: "completed"
 tags: ["Next.js", "TypeScript", "React", "Tailwind CSS", "Supabase", "Vitest"]
 thumbnail: "/thumbnails/placeholder.png"

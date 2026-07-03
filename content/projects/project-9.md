@@ -1,7 +1,7 @@
 ---
 title: "Fluo"
 slug: "project-9"
-description: "Defence procurement workflow and audit logging on Blockchain."
+description: "Proof of concept for a defence procurement workflow with audit logging on blockchain, taken to the Dual Use Hackathon 2026."
 status: "in-progress"
 tags: ["Blockchain", "Smart Contracts", "Solidity"]
 thumbnail: "/thumbnails/placeholder.png"

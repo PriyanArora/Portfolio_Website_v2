@@ -1,7 +1,7 @@
 ---
 title: "Likit"
 slug: "project-6"
-description: "Lightweight spec kit that turns claude or codex into senior mentors instead of code generators."
+description: "Lightweight spec kit that turns AI into a senior mentor instead of a code generator. Works with Claude Code, Codex, Cursor, and Windsurf."
 status: "completed"
 tags: ["Claude Code", "Codex", "npm", "Developer Tools", "Spec Kit", "Workflow"]
 thumbnail: "/likit.png"
