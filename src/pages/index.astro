@@ -135,7 +135,8 @@ const placeholderThumbnail = '/thumbnails/placeholder.png';
             <p class="font-sans text-2xl xs:text-3xl md:text-4xl">
                 Find me on <a href={profileData.socials.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a> or <a href={profileData.socials.github} target="_blank" rel="noopener noreferrer">GitHub</a>. Or just <a href="mailto:priyanarora22@gmail.com">send an email</a>.                                                                                                                      
             </p>                                                                                                                                                                      
-        </section>        
+        </section>
+        <footer class="site-footer font-mono px-6 lg:px-16">Site built with Astro</footer>
     </main>
     <script>
         import gsap from 'gsap';                                                                                                                                                      
@@ -177,6 +178,12 @@ const placeholderThumbnail = '/thumbnails/placeholder.png';
     <style>
         .hero-title {
         visibility: hidden;
+        }
+
+        .site-footer {
+            font-size: 0.9rem;
+            opacity: 0.6;
+            padding-bottom: 6rem;
         }
 
         .project-media,
