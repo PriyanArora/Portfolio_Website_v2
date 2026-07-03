@@ -7,5 +7,5 @@ tags: ["TypeScript", "Node.js", "AWS Lambda", "SQS", "DynamoDB", "GitHub App", "
 thumbnail: "/PRPILOT.png"
 repoUrl: "https://github.com/PriyanArora/PRpilot"
 featured: true
-order: 4
+order: 1
 ---

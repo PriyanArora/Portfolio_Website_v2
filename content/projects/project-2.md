@@ -9,5 +9,5 @@ video: "/videos/auctus.mp4"
 repoUrl: "https://github.com/AaryanKapoor08/auctus"
 liveUrl: "https://auctus-five.vercel.app/"
 featured: true
-order: 1
+order: 2
 ---

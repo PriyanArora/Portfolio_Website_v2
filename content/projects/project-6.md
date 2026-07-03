@@ -8,5 +8,5 @@ thumbnail: "/likit.png"
 repoUrl: "https://github.com/PriyanArora/likit"
 liveUrl: "https://medium.com/@priyanarora22/i-built-a-workflow-that-turns-ai-into-a-mentor-instead-of-a-code-generator-d971472dfe7c"
 featured: true
-order: 6
+order: 5
 ---

@@ -7,5 +7,5 @@ tags: ["ArcGIS Pro", "Python", "ModelBuilder", "GeoJSON", "ArcGIS Online", "GIS"
 thumbnail: "/EVLOS.png"
 liveUrl: "https://storymaps.arcgis.com/stories/ecc0044de0034d85a7a9862e8dfc24e9"
 featured: true
-order: 5
+order: 9
 ---
