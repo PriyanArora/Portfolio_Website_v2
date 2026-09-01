@@ -17,8 +17,8 @@
         { "category": "Cloud & Tools", "items": ["AWS (Lambda, API Gateway, SQS, Parameter Store, S3, CloudFront)", "Docker", "GitHub Actions", "Vercel", "Render","Cloudflare", "Git", "Maven", "npm workspaces", "Vitest", "Jest", "Supertest", "Flyway"] }
     ],
     "status": {
-        "default": "💻 I am probably building something",
-        "morning": "📚 I am probably in class",
+        "default": "💻 I am probably working",
+        "free": "🛋️ I am probably free",
         "night": "😴 I am probably sleeping",
         "weekend": "😎 I am probably weekending"
     },
