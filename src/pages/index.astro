@@ -94,7 +94,7 @@ const placeholderThumbnail = '/thumbnails/placeholder.png';
                     <p class={`font-sans text-2xl xs:text-3xl md:text-4xl leading-snug`}>
                         {profileData.elevatorPitch[0]}
                         <br><br>
-                    <b>Open for new opportunities</b> and for making new connections. <a href="mailto:priyanarora22@gmail.com">Reach out</a> if you want to chat about anything!
+                    <b>Currently closed for new opportunities until December</b> but not for making new connections. <a href="mailto:priyanarora22@gmail.com">Reach out</a> if you want to chat about anything!
                     </p>
             </div>      
         </section>
@@ -136,7 +136,7 @@ const placeholderThumbnail = '/thumbnails/placeholder.png';
                 Find me on <a href={profileData.socials.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a> or <a href={profileData.socials.github} target="_blank" rel="noopener noreferrer">GitHub</a>. Or just <a href="mailto:priyanarora22@gmail.com">send an email</a>.                                                                                                                      
             </p>                                                                                                                                                                      
         </section>
-        <footer class="site-footer font-mono px-6 lg:px-16">Site built with Astro</footer>
+        <footer class="site-footer font-mono px-6 lg:px-16">Site built in Astro</footer>
     </main>
     <script>
         import gsap from 'gsap';                                                                                                                                                      
@@ -237,10 +237,23 @@ const placeholderThumbnail = '/thumbnails/placeholder.png';
             background: #222226;
         }
 
+        .project-media-project-8 {
+            background: #222226;
+        }
+
         .project-media-project-1 img,
         .project-media-project-6 img {
             width: 50%;
             height: 50%;
+        }
+
+        .project-media-project-8 img {
+            width: 62%;
+            height: auto;
+        }
+
+        .project-media-project-9 img {
+            object-fit: cover;
         }
 
         .project-title-row {

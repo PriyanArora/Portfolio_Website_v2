@@ -9,7 +9,8 @@
         "email": "priyanarora22@gmail.com"
     },
     "skills": [
-        { "category": "Languages", "items": ["JavaScript, TypeScript", "Java", "C", "SQL"] },
+        { "category": "AI", "items": ["LangChain", "LangGraph", "RAG", "Vector DBs", "Neo4j", "Mastra", "Deep Agents", "MCP", "Evals & Guardrails"] },
+        { "category": "Languages", "items": ["JavaScript, TypeScript", "Python", "Java", "C", "SQL"] },
         { "category": "Frontend", "items": ["React", "Next.js","Astro", "D3.js", "Tailwind", "GSAP", "HTML", "CSS"] },
         { "category": "Backend", "items": ["Node.js", "Express", "Spring Boot", "REST APIs", "gRPC", "JWT authentication", "Zod"] },
         { "category": "Databases", "items": ["MongoDB", "DynamoDB", "MySQL", "Supabase", "PostgreSQL"] },
@@ -22,6 +23,10 @@
         "weekend": "😎 I am probably weekending"
     },
     "certifications": [
+        {
+            "name": "AI Engineer Agentic Track: The Complete Agent & MCP Course - August 2026",
+            "url": "https://www.udemy.com/certificate/UC-34b2c225-8c51-463e-a0d4-95bb0d7a9aa4/"
+        },
         {
             "name": "IBM JavaScript Programming with React, Node & MongoDB Specialization - January 2026",
             "url": "https://www.coursera.org/account/accomplishments/specialization/6023TGLRSSTL"
