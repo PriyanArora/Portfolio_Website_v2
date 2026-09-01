@@ -97,9 +97,11 @@ Try \`vim work/01_PRPilot\` to read a project. Or \`sl\` if you're bored.
       "02_auctus",
       "03_D3Careers",
       "04_BSI_Solutionz",
-      "05_EVLOS-OPS",
-      "06_Likit",
-      "07_Event_Mgmt"
+      "05_Likit",
+      "06_Scout",
+      "07_Qeue",
+      "08_Fluo",
+      "09_EVLOS-OPS"
     ]
   },
 
@@ -264,53 +266,7 @@ easy hosting. No more, no less.
 `
   },
 
-  "~/work/05_EVLOS-OPS": {
-    type: "file",
-    tag: "[ ArcGIS · Python · GIS planning ]",
-    content:
-`EVLOS-OPS
-=========
-
-An educational GIS decision-support prototype for EVLOS-style
-drone corridor planning in Fredericton, New Brunswick.
-
-It maps possible drone pilot staging points and visual observer
-positions using terrain visibility, coverage gaps, scoring rules,
-and Python exports.
-
-What it is NOT
---------------
-    ✗ flight approval
-    ✗ a substitute for legal review
-    ✗ live airspace monitoring
-    ✗ a complete aviation safety system
-
-It shows how GIS can support planning by identifying where
-visibility may be strong, weak, or missing.
-
-The workflow
-------------
-    1. Prepare open spatial data in ArcGIS Pro (city boundary,
-       roads, trails, hydro, buildings, parks, corridors, DEM)
-    2. Generate planning corridors + target points along them
-    3. Generate candidate observer points from trails/parks/roads
-    4. Build observer↔target pairs with distance limits + sector logic
-    5. Run line-of-sight on a bare-earth DEM
-
-Coverage classes
-----------------
-    blind   no visible observer
-    weak    one visible observer
-    strong  two or more
-
-Pilot/staging candidates are scored on observer support, nearby
-coverage, access context, distance to the corridor, and general
-suitability. A Python script then ranks nearby candidates and
-exports cleaned JSON + GeoJSON for downstream software.
-`
-  },
-
-  "~/work/06_Likit": {
+  "~/work/05_Likit": {
     type: "file",
     tag: "[ Workflow kit · AI as mentor ]",
     content:
@@ -358,12 +314,28 @@ with method · end sessions with small working progress.
 `
   },
 
-  "~/work/07_Event_Mgmt": {
+  "~/work/06_Scout": {
+    type: "file",
+    tag: "[ MCP · TypeScript · AI · WIP ]",
+    content:
+`Scout
+=====
+
+Prototype MCP that turns a company URL into a grounded discovery
+deliverable with ranked AI/automation opportunities, tool
+mappings, and a ready-to-import implementation plan.
+
+----------
+<Please visit documentation on github, will be updating the summary here soon>
+`
+  },
+
+  "~/work/07_Qeue": {
     type: "file",
     tag: "[ Java · Microservices · WIP ]",
     content:
-`Event Management Platform
-=========================
+`Qeue
+====
 
 An in-progress Java microservice project for publishing events and
 reserving seats *safely*. The focus: service boundaries, auth,
@@ -394,6 +366,67 @@ Also living in the repo
 
 Planned in later gated phases:
     RabbitMQ publishing · React web client · Kubernetes manifests · CI
+`
+  },
+
+  "~/work/08_Fluo": {
+    type: "file",
+    tag: "[ Blockchain · Solidity · WIP ]",
+    content:
+`Fluo
+====
+
+Proof of concept for a defence procurement workflow with audit
+logging on blockchain, taken to the Dual Use Hackathon 2026.
+
+----------
+<Please visit documentation on github, will be updating the summary here soon>
+`
+  },
+
+  "~/work/09_EVLOS-OPS": {
+    type: "file",
+    tag: "[ ArcGIS · Python · GIS planning ]",
+    content:
+`EVLOS-OPS
+=========
+
+An educational GIS decision-support prototype for EVLOS-style
+drone corridor planning in Fredericton, New Brunswick.
+
+It maps possible drone pilot staging points and visual observer
+positions using terrain visibility, coverage gaps, scoring rules,
+and Python exports.
+
+What it is NOT
+--------------
+    ✗ flight approval
+    ✗ a substitute for legal review
+    ✗ live airspace monitoring
+    ✗ a complete aviation safety system
+
+It shows how GIS can support planning by identifying where
+visibility may be strong, weak, or missing.
+
+The workflow
+------------
+    1. Prepare open spatial data in ArcGIS Pro (city boundary,
+       roads, trails, hydro, buildings, parks, corridors, DEM)
+    2. Generate planning corridors + target points along them
+    3. Generate candidate observer points from trails/parks/roads
+    4. Build observer↔target pairs with distance limits + sector logic
+    5. Run line-of-sight on a bare-earth DEM
+
+Coverage classes
+----------------
+    blind   no visible observer
+    weak    one visible observer
+    strong  two or more
+
+Pilot/staging candidates are scored on observer support, nearby
+coverage, access context, distance to the corridor, and general
+suitability. A Python script then ranks nearby candidates and
+exports cleaned JSON + GeoJSON for downstream software.
 `
   },
 
